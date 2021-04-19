@@ -3,13 +3,13 @@
  * @version: 
  * @Author: 冉勇
  * @Date: 2021-04-19 10:29:18
- * @LastEditTime: 2021-04-19 16:19:28
+ * @LastEditTime: 2021-04-19 16:24:49
 -->
 <!-- <img  wight="500px" style="border-radius: 50%"  src="./Logo.jpg"> -->
 
 <!-- 全屏图片 -->
 <!-- ![logo](https://picography.co/wp-content/uploads/2020/01/picography-a-woman-on-a-beach-opens-her-sarong-at-the-rolling-waves-768x512.jpg) -->
-![logo](Logo.jpg)
+![logo](./docsify/Logo.jpg)
 
 # **冉勇の私塾**
 
