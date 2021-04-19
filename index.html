@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: 冉勇
+ * @Date: 2021-04-19 10:18:12
+ * @LastEditTime: 2021-04-19 15:30:29
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+</head>
+
+
+<body>
+  <div id="app">加载中</div>
+  <script>
+    window.$docsify = {
+      name: '冉勇の个人私塾',
+      repo: 'https://gitee.com/ran_yong/auto.js.git',
+      coverpage: true,
+      loadNavbar: true,
+      subMaxLevel: 2,
+      homepage: "./README.md",
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      }
+    }
+  </script>
+  <div id="app"></div>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <nav>
+    <a href="#/">中文</a>
+  </nav>
+
+  <!-- 离线(PWA) -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+
+</body>
+
+</html>
