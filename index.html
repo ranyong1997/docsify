@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 冉勇
  * @Date: 2021-04-19 10:18:12
- * @LastEditTime: 2021-04-19 23:05:07
+ * @LastEditTime: 2021-04-19 23:35:01
 -->
 
 <!DOCTYPE html>
@@ -12,6 +12,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <!-- 解除其他平台的防盗链 -->
+  <meta name="referrer" content="never">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -35,25 +37,43 @@
       // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级，建议配置为1或者2
       subMaxLevel: 2,
       homepage: "./README.md",
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      }
-    }
-  </script>
-  <script>
-    // 搜索配置
-    window.$docsify = {
+      //添加搜索功能，中文和英文文档同时搜索
       search: {
-        maxAge: 86400000,
-        paths: auto,
-        placeholder: '搜索',
-        noData: '找不到结果',
-        depth: 4,
-        hideOtherSidebarContent: false,
-        namespace: 'docsify-demo',
+        paths: 'auto',
+        placeholder: {
+          '/': '🔍 搜索',
+          '/zh-cn/': '🔍 搜索',
+          '/en-us/': '🔍 Type to search'
+        },
+        //如果中文和英文文档都没有内容，则返回
+        noData: {
+          '/': '😒 找不到结果',
+          '/zh-cn/': '😒 找不到结果',
+          '/en-us/': '😒 No Results'
+        },
+        depth: 4,         //搜索标题的最大层级
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      },//增加搜索框
+
+      footer: {
+        copy: 'Copyright &copy; 2021 💖 </span>',
+        auth: ' <strong>-相依-</strong>',
+        pre: '<hr/>',
+        style: 'text-align: center;',
+      },
+
+      copyCode: {
+        buttonText: 'Copy',
+        errorText: 'Error',
+        successText: 'OK!'
+      },
+
+      'flexible-alerts': {
+        style: 'flat'
       }
     }
   </script>
+
   <!-- docsify的js依赖 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <!-- emoji表情支持 -->
@@ -62,15 +82,55 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- 搜索功能支持 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <nav>
-    <a href="#/">中文</a>
-  </nav>
+  <!-- C++、Java、python、bash等等语法高亮 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/matlab.min.js"></script>
+  <!-- CDN files for docsify-katex -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <!-- 复制提醒 -->
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script>
+    document.body.oncopy = function () {
+      swal("复制成功 🎉",
+        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 Github 给个 star 吧 😊",
+        "success");
+    };
+  </script>
+
+  <!-- 文档页脚增强 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-footer-enh/dist/docsify-footer.min.js"></script>
   <!-- 离线(PWA) -->
   <!-- <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
     }
   </script> -->
+  <!-- 置顶插件 -->
+  <script src="style/jquery-1.11.3.min.js"></script>
+  <script src="style/jquery.toTop.min.js"></script>
+  <script>
+    $('.to-top').toTop();
+  </script>
+
+  <!-- Markdown 引用样式美化 -->
+  <script
+    src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts/dist/docsify-plugin-flexible-alerts.min.js"></script>
+
+  <!-- 图片缩放 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
+
+  <!-- 访问量统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 
