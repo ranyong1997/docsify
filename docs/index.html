@@ -1,42 +1,42 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: 冉勇
- * @Date: 2021-04-19 10:18:12
- * @LastEditTime: 2021-04-19 23:35:01
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>冉勇の私塾</title>
+
   <!-- 解除其他平台的防盗链 -->
   <meta name="referrer" content="never">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- 默认主题 -->
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <link rel="stylesheet" type="text/css" href="style/myStyle.css" />
+  <!-- 主题 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
+
 </head>
 
-<body>
-  <!-- 定义加载时候的动作 -->
-  <div id="app">加载中...</div>
+<body background="" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+  <div id="app">Loading...</div>
+  <a class="to-top">Top</a>
   <script>
     window.$docsify = {
+      el: '#app',
       // 项目名称
       name: '冉勇の个人私塾',
       // 仓库地址
       repo: 'https://gitee.com/ran_yong/auto.js.git',
-      // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
-      coverpage: true,
-      // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
-      loadNavbar: true,
-      // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级，建议配置为1或者2
-      subMaxLevel: 2,
-      homepage: "./README.md",
+      loadNavbar: true, //开启导航栏
+      coverpage: true,  //开启封面
+      loadSidebar: true,//开启侧边栏
+      auto2top: true,   //切换页面自动回到顶部
+      subMaxLevel: 2,   //目录最大级数
+      maxLevel: 4,      //可配置最大支持渲染的标题层级
+      homepage: 'zh-cn/README.md', //设置中文的README.md作为首页
+
       //添加搜索功能，中文和英文文档同时搜索
       search: {
         paths: 'auto',
@@ -51,13 +51,14 @@
           '/zh-cn/': '😒 找不到结果',
           '/en-us/': '😒 No Results'
         },
+
         depth: 4,         //搜索标题的最大层级
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
       },//增加搜索框
 
       footer: {
         copy: 'Copyright &copy; 2021 💖 </span>',
-        auth: ' <strong>-相依-</strong>',
+        auth: ' <strong>-冉勇の个人私塾-</strong>',
         pre: '<hr/>',
         style: 'text-align: center;',
       },
@@ -71,17 +72,21 @@
       'flexible-alerts': {
         style: 'flat'
       }
+
     }
   </script>
 
-  <!-- docsify的js依赖 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <!-- emoji表情支持 -->
+
+  <!-- docsify表情包 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <!-- 图片放大缩小支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <!-- 搜索功能支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+  <!-- 复制代码到剪切板 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+
+  <!-- 搜索功能 -->
+  <script src="//cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+
   <!-- C++、Java、python、bash等等语法高亮 -->
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
@@ -95,26 +100,32 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/matlab.min.js"></script>
+
   <!-- CDN files for docsify-katex -->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-  <!-- 复制提醒 -->
-  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
-  <script>
-    document.body.oncopy = function () {
-      swal("复制成功 🎉",
-        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 Github 给个 star 吧 😊",
-        "success");
-    };
-  </script>
 
   <!-- 文档页脚增强 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-footer-enh/dist/docsify-footer.min.js"></script>
-  <!-- 离线(PWA) -->
-  <!-- <script>
+
+  <!-- 复制提醒 -->
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script>
+    // document.body.oncopy = function () {
+    //   swal("复制成功 🎉");
+    // };
+  </script>
+
+  <!-- PWA 离线化 -->
+  <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
     }
-  </script> -->
+  </script>
+
+  <!-- 访问量统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
   <!-- 置顶插件 -->
   <script src="style/jquery-1.11.3.min.js"></script>
   <script src="style/jquery.toTop.min.js"></script>
@@ -129,8 +140,6 @@
   <!-- 图片缩放 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
 
-  <!-- 访问量统计 -->
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 
