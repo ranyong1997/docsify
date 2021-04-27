@@ -1,3 +1,4 @@
+# EasyClick开发脚本学习
 官方文档：[https://easyclick.gitee.io/docs/#/README](https://easyclick.gitee.io/docs/#/README)
 解放双手，可编程式、智能化自动点击App；只要会敲键盘就能进行编程！
 
