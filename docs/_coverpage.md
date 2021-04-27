@@ -3,11 +3,11 @@
  * @version: 
  * @Author: 冉勇
  * @Date: 2021-04-20 10:24:20
- * @LastEditTime: 2021-04-25 18:19:17
+ * @LastEditTime: 2021-04-27 22:46:02
 -->
 <!-- <img height="25px" weditor="25px" style="border-radius: 50%"  src="Logo.jpg"> -->
 <!-- <img height="500"  src="Logo.jpg"> -->
-<img width="750" style="box-shadow: 10px 10px 20px #888888 " bor src="style/Logo.jpg"  >
+<img width="550" style="box-shadow: 10px 10px 20px #888888 " bor src="style/Logo.jpg"  >
 <!-- 全屏图片 -->
 <!-- ![logo](zh-cn/style/Logo.jpg) -->
 
