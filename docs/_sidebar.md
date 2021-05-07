@@ -3,10 +3,10 @@
  * @version: 
  * @Author: 冉勇
  * @Date: 2021-04-20 10:24:20
- * @LastEditTime: 2021-05-07 23:20:51
+ * @LastEditTime: 2021-05-07 23:27:03
 -->
 - 前言
-    <!-- - [简介](zh-cn/README.md) -->
+    - [简介](zh-cn/README.md)
     
 - AutoJS
     - [基础学习](zh-cn/AutoJS/AutoJS.md)
