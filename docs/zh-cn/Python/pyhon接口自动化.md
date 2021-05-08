@@ -3,7 +3,7 @@
 采用当今主流的语言加框架加测试报告进行接口测试，其中不足，请大家多多指出并协助更改。 这里非常感谢一位老哥：[https://gitee.com/zy7y](https://gitee.com/zy7y)  QQ:396667207
 感谢老哥耐心指教
 
-语雀版：https://www.yuque.com/docs/share/dff93b31-cce0-4a7a-8d06-1540e659c32f?# 《Python-接口自动化(Request+pytest+allure)》
+墙裂推荐语雀版：https://www.yuque.com/docs/share/dff93b31-cce0-4a7a-8d06-1540e659c32f?# 《Python-接口自动化(Request+pytest+allure)》
 
 # 功能：
 
